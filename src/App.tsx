@@ -1,122 +1,54 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import Accordion from "./components/accordion/Accordion";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <Accordion>
+      <Accordion.Item index={0}>
+        <Accordion.Header>Facebook</Accordion.Header>
+        <Accordion.Panel>
+          Facebook là mạng xã hội lớn nhất thế giới, cho phép người dùng kết nối với bạn bè, gia đình và những người có cùng sở thích. 
+          Người dùng có thể chia sẻ trạng thái, ảnh, video, tham gia các nhóm (Groups) và trang (Pages), 
+          cũng như sử dụng tính năng nhắn tin qua Messenger để giao tiếp trực tiếp.
+        </Accordion.Panel>
+      </Accordion.Item>
 
-      <div className="ticks"></div>
+      <Accordion.Item index={1}>
+        <Accordion.Header>Instagram</Accordion.Header>
+        <Accordion.Panel>
+          Instagram là một nền tảng mạng xã hội tập trung chủ yếu vào việc chia sẻ hình ảnh và video. 
+          Nổi bật với các tính năng như Stories (biến mất sau 24 giờ), Reels (video ngắn tương tự TikTok) và bộ lọc ảnh đa dạng, 
+          Instagram đặc biệt thu hút giới trẻ và các nhãn hàng muốn xây dựng hình ảnh thương hiệu trực quan.
+        </Accordion.Panel>
+      </Accordion.Item>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <Accordion.Item index={2}>
+        <Accordion.Header>X (trước đây là Twitter)</Accordion.Header>
+        <Accordion.Panel>
+          X là mạng xã hội microblogging nơi người dùng tương tác thông qua các bài đăng ngắn. 
+          Nền tảng này rất mạnh trong việc cập nhật tin tức theo thời gian thực, thảo luận về các sự kiện đang diễn ra (trending topics), 
+          và là nơi các chính trị gia, nhà báo, người nổi tiếng thường xuyên sử dụng để phát ngôn trực tiếp.
+        </Accordion.Panel>
+      </Accordion.Item>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <Accordion.Item index={3}>
+        <Accordion.Header>LinkedIn</Accordion.Header>
+        <Accordion.Panel>
+          LinkedIn là mạng xã hội định hướng kinh doanh và tuyển dụng lớn nhất hiện nay. 
+          Thay vì chia sẻ cuộc sống cá nhân, người dùng tạo hồ sơ chuyên nghiệp (CV online), kết nối với đồng nghiệp, 
+          tìm kiếm cơ hội việc làm, và chia sẻ kiến thức, kinh nghiệm liên quan đến ngành nghề của họ.
+        </Accordion.Panel>
+      </Accordion.Item>
+
+      <Accordion.Item index={4}>
+        <Accordion.Header>TikTok</Accordion.Header>
+        <Accordion.Panel>
+          TikTok là nền tảng video ngắn bùng nổ mạnh mẽ trong những năm gần đây. 
+          Với thuật toán đề xuất nội dung (For You Page) cực kỳ thông minh và dễ gây nghiện, TikTok cho phép người dùng 
+          tạo và xem các video giải trí, nhảy múa, giáo dục... có thời lượng từ vài giây đến vài phút với nhiều hiệu ứng bắt mắt.
+        </Accordion.Panel>
+      </Accordion.Item>
+    </Accordion>
+  );
 }
 
-export default App
+export default App;
